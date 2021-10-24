@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoBs</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/job.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+
+            <h1>GETJOB
+            </h1>
+            <div class="links">
+                <div onclick="myFunction()">
+                    <span class="icons">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+
+                </span>
+                <ul id="myDropdown">
+                    <li><a href="index.html">HOME</a> </li>
+                    <li><a href="jobscat.html">JOBS</a> </li>
+                    <li><a href="#About">ABOUT US</a> </li>
+                    <li><a href="#TERMS">TERMS</a> </li>
+                    <li><a href="team.html">TEAM</a> </li>
+                    <li><a href="#contact">CONTACT</a> </li>
+                    <li><a href="createJob.html">CREATE JOB</a> </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="container-sub-head">
+        <div class="container">
+            <h1>Available<span> Jobs</span></h1>
+            <h3>Find Your corresponding Jobs in our website</h3>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="row-jobs">
+            <div class="job-content">
+
+                <div class="job-item" data-category="computerscience">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-laptop"></i>
+
+                        </div>
+                        <div class="job-description">
+                            <a href="#">
+                                <h4>Computer Science</h4>
+                            </a>
+                          
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="communication">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-pencil"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Communication</h4>
+                            </a>
+                           
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="health">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-h-square"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Health</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="commerce">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-briefcase"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Commerce</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="education">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-child"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Education</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="transport">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-car"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Transport</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="hr">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-flag-checkered"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Human Resources</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="construction">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-building-o"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Construction</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="job-item" data-category="security">
+                    <a href="#">
+                        <div class="img-item">
+                            <i class="fa fa-lock"></i>
+
+                        </div>
+                        <div class="job-description">
+
+                            <a href="#">
+                                <h4>Protection Services</h4>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("showdrop");
+        }
+        
+        </script>
+        <script>
+const jobItems = document.querySelectorAll(".job-item");
+            // listen for job category click
+jobItems.forEach((jobItem) => {
+  jobItem.addEventListener("click", (e) => {
+    const category = jobItem.getAttribute("data-category");
+    window.location.href = `http://localhost:5000/jobdetails.html?category=${category}`;
+  });
+});
+
+        </script>
+</body>
+
+</html>

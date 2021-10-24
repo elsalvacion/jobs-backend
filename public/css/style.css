@@ -1,0 +1,334 @@
+:root {
+  --main-color: #03093a;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Global rules  */
+
+/* Header  */
+
+header {
+  width: 100%;
+  background-color: black;
+  position: sticky;
+  z-index: 1;
+  top: 0%;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  width: 60px;
+}
+
+header .container h1 {
+  font-size: large;
+  font-size: 30px;
+  font-style: normal;
+  color: #eff0f1;
+  font-weight: 900;
+}
+header .container em {
+  font-style: normal;
+  color: var(--main-color);
+  font-weight: 900;
+}
+header .links {
+  position: relative;
+}
+
+header .links .icons {
+  display: flex;
+  width: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header .links .icons span {
+  background-color: rgb(255, 251, 251);
+  margin-bottom: 5px;
+  height: 3px;
+}
+
+header .links .icons span:first-child {
+  width: 100%;
+}
+header .links .icons span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+header .links .icons span:last-child {
+  width: 100%;
+}
+
+header .links:hover .icons span:nth-child(2) {
+  width: 100%;
+}
+
+header .links ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  background-color: rgb(209, 205, 205);
+  min-width: 200px;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+
+/* header .links:hover ul{
+      display: block;
+  } */
+header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgb(209, 205, 205) transparent;
+  position: absolute;
+  right: 0px;
+  top: -20px;
+}
+header .links ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-family: sans-serif;
+  padding: 15px;
+  display: block;
+  transition: 0.3s;
+  font-size: larger;
+}
+header .links .showdrop {
+  display: block;
+}
+header .links ul li a:hover {
+  padding-left: 25px;
+}
+
+header .links ul li:not(:last-child) a {
+  border-bottom: rgb(184, 175, 175);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 5px;
+}
+header .links .showdrop {
+  display: block;
+}
+
+.fristSection {
+  top: 0%;
+  max-width: 100%;
+  min-height: calc(100vh - 60px);
+  background: url(../images/job-image-1-1200x600.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.fristSection:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 45, 57, 0.7);
+}
+a {
+  text-decoration: none !important;
+}
+
+.fristSection .caption {
+  position: absolute;
+  text-align: center;
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fristSection .caption h6 {
+  margin-top: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin: 0px;
+}
+
+.fristSection .caption h2 {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 84px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.fristSection .caption h2 em {
+  font-style: normal;
+  color: #03093a;
+  font-weight: 900;
+}
+
+.buttonJ a {
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
+  background-color: #03093a;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.buttonJ a:hover {
+  background-color: #091252;
+  color: #fff;
+  font-weight: 420;
+}
+.fixedSection {
+  background-image: url(../images/about-fullscreen-1-1920x700.jpg);
+  background-attachment: fixed;
+}
+.fristSection .caption .sectionRead h2 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-size: 50px;
+  max-width: 100%;
+}
+.fristSection .caption .sectionRead p {
+  color: #fff;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* section  */
+.section-heading {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #232d39;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.section-heading h2 em {
+  font-style: normal;
+  color: #091252;
+}
+
+.recentJob {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+.feature {
+  background-color: rgb(247, 247, 247);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  height: 250px;
+  border: rgb(231, 230, 223) solid 15px;
+}
+.recentJob .container .slide {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, max(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.feature i {
+  color: var(--main-color);
+}
+i {
+  height: 20px;
+  width: 40px;
+  font-size: 50px;
+}
+/* trainers style */
+
+ul.social-icons li {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+ul.social-icons li a {
+  color: #232d39;
+  transition: all 0.3s;
+}
+
+ul.social-icons li a:hover {
+  color: #3c3a75;
+  background-color: rgb(182, 176, 168);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.social-icons button {
+  border: 0;
+  outline: 0;
+  background: #06034e;
+  color: white;
+  padding: 7px 15px;
+  font-weight: bold;
+}
+
+.social-icons button:hover {
+  background: #3c3a75;
+}
+
+.social-icons button span {
+  margin-left: 7px;
+}
+
+.social-icons button:hover span {
+  margin-left: 10px;
+}

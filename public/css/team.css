@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Pippins", sans-serif;
+}
+
+img {
+  border: 3px solid #dfdbdb;
+  cursor: pointer;
+  height: 160px;
+  width: 150px;
+}
+
+header {
+  width: 100%;
+  background-color: black;
+  position: sticky;
+  z-index: 250;
+  top: 0%;
+  padding: 0 15px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  width: 60px;
+}
+
+header nav h1 {
+  font-size: large;
+  font-size: 30px;
+  font-style: normal;
+  color: #eff0f1;
+  font-weight: 900;
+}
+header nav em {
+  font-style: normal;
+  color: var(--main-color);
+  font-weight: 900;
+}
+header .links {
+  position: relative;
+}
+
+header .links .icons {
+  display: flex;
+  width: 30px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header .links .icons span {
+  background-color: rgb(255, 251, 251);
+  margin-bottom: 5px;
+  height: 3px;
+}
+
+header .links .icons span:first-child {
+  width: 100%;
+}
+header .links .icons span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+header .links .icons span:last-child {
+  width: 100%;
+}
+
+header .links:hover .icons span:nth-child(2) {
+  width: 100%;
+}
+
+header .links ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  background-color: rgb(209, 205, 205);
+  min-width: 200px;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+
+/* header .links:hover ul{
+        display: block;
+    } */
+header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgb(209, 205, 205) transparent;
+  position: absolute;
+  right: 0px;
+  top: -20px;
+}
+header .links ul li a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-family: sans-serif;
+  padding: 15px;
+  display: block;
+  transition: 0.3s;
+  font-size: larger;
+}
+header .links .showdrop {
+  display: block;
+}
+header .links ul li a:hover {
+  padding-left: 25px;
+}
+
+header .links ul li:not(:last-child) a {
+  border-bottom: rgb(184, 175, 175);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 5px;
+}
+header .links .showdrop {
+  display: block;
+}
+.cta-content {
+  padding: 50px 20px;
+  background: #03093a;
+  text-align: center;
+  color: white;
+  font-size: 34px;
+}
+.container {
+  padding: 30px;
+  padding-top: 100px;
+}
+
+.container .card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.card-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 10px;
+  height: auto;
+  padding-bottom: 15px;
+  width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.card-wrapper .card:hover {
+  box-shadow: 3px 3px 7px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.item-card {
+  width: 100%;
+  padding: 0px 10px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.item-card a {
+  color: #1111117e;
+  font-size: 18px;
+}
+
+.item-card > :nth-child(odd) {
+  color: #6b776b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.item-card h1 {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.item-card p {
+  text-align: left;
+  padding: 15px;
+  justify-content: flex-end;
+  word-wrap: normal;
+}
+
+.card .profile-img {
+  align-items: center;
+  text-align: center;
+  margin-top: -45px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.social-media {
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid #00000065;
+  margin-top: 3px;
+}
+
+.card ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+.card ul li a {
+  padding: 10px;
+}
+
+.card ul li a:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  background: #03093a;
+  color: #f1f1ff;
+}

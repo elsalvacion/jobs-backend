@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Job</title>
+  <link rel="stylesheet" href="css/createJob.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <h1>GETJOB
+        </h1>
+        <div class="links">
+            <div onclick="myFunction()">
+                <span class="icons">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </div>
+
+            </span>
+            <ul id="myDropdown">
+                <li><a href="index.html">HOME</a> </li>
+                <li><a href="jobscat.html">JOBS</a> </li>
+                <li><a href="#About">ABOUT US</a> </li>
+                <li><a href="#TERMS">TERMS</a> </li>
+                <li><a href="team.html">TEAM</a> </li>
+                <li><a href="#contact">CONTACT</a> </li>
+                <li><a href="createJob.html">CREATE JOB</a> </li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+
+<!-- form -->
+
+<div class="form-container">
+    <form>
+    <input type="text" placeholder="title" class="title">
+    <input type="text" placeholder="overview" class="overview">
+    <div class="inlineInputs">
+        <label>Continent</label>
+        <select class="location">
+            <option value="asia">Asia</option>
+            <option value="africa">Africa</option>
+            <option value="europe">Europe</option>
+            <option value="usa">USA</option>
+            <option value="south-america">South America</option>
+            <option value="antartica">Antartica</option>
+            <option value="australia">Australia</option>
+        </select>
+        <input type="text" placeholder="country" class="country">
+        <label >Type</label>
+        <select class="type">
+            <option value="full-time">Full Time</option>
+            <option value="part-time">Part Time</option>
+            <option value="contract">Contract</option>
+            <option value="temporary">Temporary</option>
+            <option value="internship">Internship</option>
+            <option value="volunteer">Volunteer</option>
+            <option value="remote">Remote</option>
+        </select>
+    </div>
+    <div class="reponsibilities">
+        <div class="reponsibilitiesLabel">
+            <label>Responsibility</label>
+        <button class="addReponsibilities">+</button>
+        </div>
+        <div class="reponsibilitiesInput">
+
+        </div>
+    </div>
+
+    <div class="qualifications">
+        <div class="qualificationsLabel">
+            <label>Qualifications</label>
+        <button class="addQualifications">+</button>
+        </div>
+        <div class="qualificationsInput">
+            
+        </div>
+    </div>
+
+    <div class="optionalQualifications">
+        <div class="optionalQualificationsLabel">
+            <label>Optional Qualifications</label>
+        <button class="addOptionalQualifications">+</button>
+        </div>
+        <div class="optionalQualificationsInput">
+            
+        </div>
+    </div>
+
+    <div class="benefits">
+        <div class="benefitsLabel">
+            <label>Benefits</label>
+        <button class="addBenefits">+</button>
+        </div>
+        <div class="benefitsInput">
+            
+        </div>
+    </div>
+
+    <div class="inlineInputs">
+        <input type="number" class="minSalary" placeholder="min salary">
+        <input type="number" class="maxSalary" placeholder="max salary">
+        <input type="text" placeholder="institution name" class="companyName">
+    </div>
+
+    <div class="inlineInputs">
+        <input type="number" class="numberofVacancies" placeholder="vacancies">
+        <input type="number" class="maxSalary" placeholder="max salary">
+        <input type="text" placeholder="institution name" class="companyName">
+    </div>
+
+    <div class="inlineInputs">
+        <label >Category</label>
+        <select class="category">
+            <option value="health">Health</option>
+            <option value="construction">Construction</option>
+            <option value="transport">Transport</option>
+            <option value="communication">Communication</option>
+            <option value="education">Education</option>
+            <option value="commerce">Commerce</option>
+            <option value="transport">Transport</option>
+            <option value="commerce">Commerce</option>
+            <option value="computerscience">Computer Science</option>
+            <option value="hr">HR</option>
+            <option value="security">Security</option>
+        </select>
+
+        <input type="email" placeholder="email">
+        <small>This email is where applicants cv/resume will be sent</small>
+    </div>
+
+    </form>
+</div>
+<script src="js/createJob.js"></script>
+</body>
+</html>

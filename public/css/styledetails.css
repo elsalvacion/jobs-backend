@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+:root {
+  --title-color: #232d39;
+  --color-cat-title: #212529;
+  --color-title: #d49c9388;
+  --shadow-color: #f2f2f2d7;
+  --main-color: #03093a;
+  --left-bak: #4c5558;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+hr {
+  margin-top: 9px;
+  background: #b31616;
+  color: #03093a;
+  width: 100%;
+  border: 2px solid #745252;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "left right";
+  grid-template-columns: 300px 1fr;
+}
+
+.left {
+  grid-area: left;
+  background: #03093ade;
+  min-height: 100vh;
+  position: fixed;
+  width: 300px;
+}
+
+.left form {
+  padding: 10px;
+  min-height: 100vh;
+  color: #f4f5f4;
+  padding: 20px;
+}
+
+.left form .container-items-left {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.container-items-left .item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  line-height: 1.5;
+  padding: 7px;
+  font-weight: 300;
+}
+
+.container-items-left .item h5 {
+  margin-bottom: 4px;
+  font-size: 17px;
+}
+
+.container-items-left .item label {
+  margin: 2px;
+  cursor: pointer;
+}
+
+.right {
+  grid-area: right;
+  padding: 10px;
+  min-height: 100vh;
+}
+
+.row-box {
+  height: auto;
+  width: 100%;
+}
+
+.boxcontainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 0.75rem;
+  padding: 10px 10px;
+}
+
+.boxtitle {
+  font-size: 23px;
+  color: #0e0e0e;
+  font-weight: 400;
+  margin-top: 0.15rem;
+  transition: 0.2s;
+}
+
+.boxheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d3d2d2ab;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.boxicon {
+  font-size: 1.5rem;
+  height: max-content;
+  color: #10102ea8;
+  transition: 0.3s;
+}
+
+.boxitem {
+  box-shadow: 2px 2px 5px #6361618a;
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.boxcontent {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.boxcontent .content-item {
+  display: block;
+  margin: 9px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.boxcontent .content-item:last-child {
+  display: block;
+  margin: 18px;
+  padding: 14px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.content-item .btn-aply {
+  background: #049464c4;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  padding: 8px;
+  width: 150px;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #f0faff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.content-item .btn-aply:hover {
+  color: white;
+  background: #1c970b;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  box-shadow: 0 12px 32px #b6b6b6be;
+}
+
+/* Job decription*/
+
+.content-item .sub-content-des1,
+.content-item .sub-content-des2,
+.content-item .sub-content-des3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 9px;
+}
+
+.sub-content-des1 h4 {
+  font-size: 18px;
+  font-family: "Poppins";
+  margin-bottom: 6px;
+  color: #101111da;
+}
+
+.sub-content-des2 h6 {
+  font-size: 15px;
+  color: #101111da;
+}
+
+.sub-content-des2 p,
+.sub-content-des2 p li {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.sub-content-des3 h5 {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-family: "Poppins";
+}
+
+/*Rotate icon and add font weight to titles*/
+
+.accordion-open .boxicon {
+  transform: rotate(45deg);
+}
+
+.accordion-open .boxtitle {
+  font-weight: 500;
+  color: #000011ef;
+}
+
+.des1-job p {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.des1-job ul {
+  list-style-type: none;
+  display: block;
+}
+
+.des1-job ul li {
+  margin-bottom: 7px;
+}
+
+.des1-job ul li span {
+  color: #201b1b;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.no-job {
+  text-align: center;
+  color: rgb(134, 133, 133);
+}

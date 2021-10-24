@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const jobsRoute = require("./routes/jobs");
 const errorHandler = require("./middlewares/errors");
-
+const fileupload = require("express-fileupload");
 // require and use config files
 require("dotenv").config({ path: "./config/.env" });
 connectDB();
@@ -12,6 +12,7 @@ const app = express();
 
 // express body parser
 app.use(express.json());
+app.use(fileupload());
 
 // morgan
 if (process.env.NODE_ENV === "development") {

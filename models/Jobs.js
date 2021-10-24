@@ -74,16 +74,19 @@ const JobsSchema = new mongoose.Schema({
     type: String,
     enum: [
       "health",
-      "law",
-      "government",
+      "construction",
+      "transport",
+      "communication",
       "education",
-      "communications",
-      "engineering",
-      "sales",
+      "commerce",
+      "transport",
+      "computerscience",
+      "hr",
+      "security",
     ],
     required: [true, "Category is required"],
   },
-  website: {
+  email: {
     type: String,
   },
   createdAt: {

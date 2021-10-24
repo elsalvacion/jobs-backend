@@ -1,14 +1,17 @@
 const router = require("express").Router();
 const { body, validationResult } = require("express-validator");
 const Jobs = require("../models/Jobs");
+const nodemailer = require("nodemailer");
+const path = require("path");
+const { nanoid } = require("nanoid");
 
 router.post(
   "/",
-  body("website")
-    .matches(
-      /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/
-    )
-    .withMessage("Please enter a valid website url"),
+  body("email")
+    .notEmpty()
+    .withMessage("Email is required")
+    .isEmail()
+    .withMessage("Enter a valid email"),
   async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -135,6 +138,75 @@ router.delete("/:id", async (req, res, next) => {
     res.status(200).json({
       success: true,
       msg: "Job Deleted",
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// router
+
+router.post("/apply/:id", async (req, res, next) => {
+  try {
+    console.log(req.files);
+    const file = req.files.file;
+
+    if (file.mimetype !== "application/pdf") {
+      return res.status(400).json({ success: false, msg: "Upload only pdfs" });
+    }
+
+    if (file.size > process.env.MAX_SIZE) {
+      return res
+        .status(400)
+        .json({ success: false, msg: "File greater than 5MB" });
+    }
+
+    const job = await Jobs.findById(req.params.id);
+
+    if (!job) {
+      return res
+        .status(400)
+        .json({ success: false, msg: "No Job of this category" });
+    }
+    const id = nanoid(6);
+    const name = `${id}${path.parse(file.name).ext}`;
+
+    file.mv(`${process.env.FILE_PATH}/${name}`, async (err) => {
+      if (err) console.log(err);
+    });
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `Jobs <${process.env.EMAIL}>`,
+      to: "alieukeita201@gmail.com",
+      subject: "New Job applicant",
+      text: `You have a new applicant for the job you posted at jobs.com with the title: ${job.title} and overview of: 
+${job.overview}
+      `,
+      attachments: [
+        {
+          path: `${process.env.FILE_PATH}/${name}`,
+        },
+      ],
+    };
+
+    await transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+        throw err;
+      } else {
+        console.log("Email sent: " + info.response);
+        res
+          .status(200)
+          .json({ success: true, msg: "Application sent successfully" });
+      }
     });
   } catch (err) {
     next(err);
