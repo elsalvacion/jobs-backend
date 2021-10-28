@@ -18,10 +18,11 @@ const populateJobs = async () => {
       boxContainer.innerHTML += `
       <div class="boxitem">
 
-      <header class="boxheader">
+      <div.
+       class="boxheader">
           <h2 class="boxtitle">${job.title}</h2>
           <i class="fa fa-plus boxicon"></i>
-      </header>
+      </div>
       <div class="boxcontent">
           <hr>
           <div class="content-item">
@@ -74,6 +75,16 @@ const populateJobs = async () => {
                          .join("")}
                        </ul>
                       </li>
+
+                      <li><span>Benefits:</span>
+                      <ul>
+                      ${job.benefits
+                        .map((benefit) => {
+                          return `<li>${benefit}</li>`;
+                        })
+                        .join("")}
+                      </ul>
+                     </li>
                   </ul>
               </div>
           </div>

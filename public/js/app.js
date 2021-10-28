@@ -14,7 +14,11 @@ const fetchSlideData = async () => {
 
     <h4>${job.title}</h4>
 
-    <p>${job.category}</p>
+    <p>${
+      job.category === "computerscience"
+        ? "Computer Science"
+        : job.category.charAt(0).toUpperCase() + job.category.slice(1)
+    }</p>
 
     <div class="social-icons" >
         <button class="view" data-job="${job._id}">View <span>></span></button>

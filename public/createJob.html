@@ -38,12 +38,18 @@
 <!-- form -->
 
 <div class="form-container">
+    <h2 class="heading">Create a Job</h2>
+    <div class="errors">
+       
+    </div>
     <form>
-    <input type="text" placeholder="title" class="title">
-    <input type="text" placeholder="overview" class="overview">
+    <input  type="text" placeholder="title" class="title">
+    <input  type="text" placeholder="overview" class="overview">
+    <input  type="text" placeholder="country" class="country">
     <div class="inlineInputs">
+      <div>
         <label>Continent</label>
-        <select class="location">
+        <select  class="location">
             <option value="asia">Asia</option>
             <option value="africa">Africa</option>
             <option value="europe">Europe</option>
@@ -52,9 +58,11 @@
             <option value="antartica">Antartica</option>
             <option value="australia">Australia</option>
         </select>
-        <input type="text" placeholder="country" class="country">
+      </div>
+        
+       <div>
         <label >Type</label>
-        <select class="type">
+        <select  class="type">
             <option value="full-time">Full Time</option>
             <option value="part-time">Part Time</option>
             <option value="contract">Contract</option>
@@ -63,62 +71,62 @@
             <option value="volunteer">Volunteer</option>
             <option value="remote">Remote</option>
         </select>
+       </div>
     </div>
-    <div class="reponsibilities">
-        <div class="reponsibilitiesLabel">
+    <div class="dynamicAddInput">
+        <div class="dynamicInputLabel">
             <label>Responsibility</label>
-        <button class="addReponsibilities">+</button>
+        <button type="button" class="addReponsibilities">+</button>
         </div>
         <div class="reponsibilitiesInput">
-
+          
         </div>
     </div>
 
-    <div class="qualifications">
-        <div class="qualificationsLabel">
+    <div class="dynamicAddInput">
+        <div class="dynamicInputLabel">
             <label>Qualifications</label>
-        <button class="addQualifications">+</button>
+        <button type="button" class="addQualifications">+</button>
         </div>
         <div class="qualificationsInput">
-            
+           
         </div>
     </div>
 
-    <div class="optionalQualifications">
-        <div class="optionalQualificationsLabel">
+    <div class="dynamicAddInput">
+        <div class="dynamicInputLabel">
             <label>Optional Qualifications</label>
-        <button class="addOptionalQualifications">+</button>
+        <button type="button" class="addOptionalQualifications">+</button>
         </div>
         <div class="optionalQualificationsInput">
-            
+         
         </div>
     </div>
 
-    <div class="benefits">
-        <div class="benefitsLabel">
+    <div class="dynamicAddInput">
+        <div class="dynamicInputLabel">
             <label>Benefits</label>
-        <button class="addBenefits">+</button>
+        <button type="button" class="addBenefits">+</button>
         </div>
         <div class="benefitsInput">
-            
+         
         </div>
     </div>
 
     <div class="inlineInputs">
-        <input type="number" class="minSalary" placeholder="min salary">
-        <input type="number" class="maxSalary" placeholder="max salary">
-        <input type="text" placeholder="institution name" class="companyName">
+        <input  type="number" class="minSalary" placeholder="min salary">
+        <input  type="number" class="maxSalary" placeholder="max salary">
     </div>
 
     <div class="inlineInputs">
-        <input type="number" class="numberofVacancies" placeholder="vacancies">
-        <input type="number" class="maxSalary" placeholder="max salary">
-        <input type="text" placeholder="institution name" class="companyName">
+        <input  type="number" class="numberofVacancies" placeholder="vacancies">
+        <input  type="text" placeholder="institution name" class="companyName">
     </div>
 
     <div class="inlineInputs">
+      <div>
         <label >Category</label>
-        <select class="category">
+        <select  class="category">
             <option value="health">Health</option>
             <option value="construction">Construction</option>
             <option value="transport">Transport</option>
@@ -131,13 +139,18 @@
             <option value="hr">HR</option>
             <option value="security">Security</option>
         </select>
+      </div>
+<div>
 
-        <input type="email" placeholder="email">
-        <small>This email is where applicants cv/resume will be sent</small>
+    <small>This email is where applicants cv/resume will be sent</small>
+    <input  type="email" class="email" placeholder="email">
+</div>
     </div>
 
+    <button type="submit">Create</button>
     </form>
 </div>
 <script src="js/createJob.js"></script>
+
 </body>
 </html>

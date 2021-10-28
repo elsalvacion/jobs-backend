@@ -13,6 +13,7 @@ router.post(
     .isEmail()
     .withMessage("Enter a valid email"),
   async (req, res, next) => {
+    console.log(req.body);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ success: false, errors: errors.array() });
@@ -48,18 +49,20 @@ router.get("/", async (req, res, next) => {
 
   // select type values
   if (req.query.type) {
-    queryStr = Jobs.find({ type: req.query.type });
+    queryStr = Jobs.find({ type: req.query.type }).sort({ createdAt: -1 });
   }
 
   // select category values
   if (req.query.category) {
-    queryStr = Jobs.find({ category: req.query.category });
+    queryStr = Jobs.find({ category: req.query.category }).sort({
+      createdAt: -1,
+    });
   }
 
   try {
     let jobs;
     if (!req.query.type && !req.query.category) {
-      jobs = await Jobs.find();
+      jobs = await Jobs.find().sort({ createdAt: -1 });
     } else jobs = await queryStr;
 
     if (!jobs) {

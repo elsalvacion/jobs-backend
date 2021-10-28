@@ -15,7 +15,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  background: #f5f5f5;
 }
 
 /* Small */
@@ -148,4 +148,98 @@ header .links ul li:not(:last-child) a {
 }
 header .links .showdrop {
   display: block;
+}
+
+/* form */
+
+.form-container {
+  width: 600px;
+  max-width: 100%;
+  box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 7px;
+  background: white;
+}
+
+h2.heading {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 34px;
+  margin: 10px 0;
+}
+
+.errors {
+  color: darkred;
+  margin: 10px 0;
+  padding: 5px;
+}
+.success {
+  color: teal;
+}
+
+.form-container input,
+select {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #9e9ea0;
+  margin: 7px 2px;
+  background: white;
+  border-radius: 7px;
+}
+
+input:focus,
+select:focus {
+  outline: 0;
+  box-shadow: 3px 3px 7px 3px rgba(0, 0, 0, 0.2);
+}
+
+.form-container button {
+  font-size: 16px;
+  padding: 7px 15px;
+  border: 0;
+  background: teal;
+  color: #f5f5f5;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.form-container button:focus {
+  outline: 0;
+}
+
+.dynamicAddInput {
+  margin: 3px 0;
+}
+
+.newInput {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newInput input {
+  width: 90%;
+}
+.newInput .del {
+  font-size: 16px;
+  padding: 7px !important;
+  height: fit-content;
+  border: 0;
+  background: darkred;
+  color: #f5f5f5;
+  font-weight: bolder;
+}
+
+.inlineInputs {
+  display: flex;
+  flex: wrap;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+.inlineInputs div {
+  flex: 1;
+  margin: 0 2px;
 }
