@@ -60,6 +60,12 @@
       const btn = document.querySelector(".btn");
       const result = document.querySelector(".result");
 
+      file.addEventListener("change", e => {
+        const name = file.value.split(".");
+          if (name[name.length - 1] !== "pdf") {
+            result.innerHTML = `<p class="error">Upload only pdf files</p>`;
+          }
+      })
       // apply clickec
       btn.addEventListener("click", async (e) => {
         if (file.value === "") {
@@ -68,7 +74,8 @@
           const name = file.value.split(".");
           if (name[name.length - 1] !== "pdf") {
             result.innerHTML = `<p class="error">Upload only pdf files</p>`;
-          } else {
+          }
+          else { 
             result.innerHTML = `<img src="./images/spinner.gif" width="100%" height="100%" />`;
             const fileField = document.querySelector(".apply");
             const formData = new FormData();

@@ -61,6 +61,7 @@ form.addEventListener("submit", async (e) => {
   const numberofVacancies = document.querySelector(".numberofVacancies");
   const category = document.querySelector(".category");
   const email = document.querySelector(".email");
+  const deadline = document.querySelector("#deadline");
 
   if (error === false) {
     const data = {
@@ -79,6 +80,7 @@ form.addEventListener("submit", async (e) => {
       numberofVacancies: Number(numberofVacancies.value),
       category: category.value,
       email: email.value,
+      deadline: deadline.value,
     };
 
     // console.log(data);

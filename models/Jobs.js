@@ -89,6 +89,9 @@ const JobsSchema = new mongoose.Schema({
   email: {
     type: String,
   },
+  deadline: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -72,12 +72,12 @@ const populateJobs = async () => {
                          </ul>
                         </li>
                         <li><span>Benefits:</span>
-                        <ul> `;
-      job.benefits
-        .map((benefit) => {
-          return `<li>${benefit}</li>`;
-        })
-        .join("") +
+                        <ul> ` +
+        job.benefits
+          .map((benefit) => {
+            return `<li>${benefit}</li>`;
+          })
+          .join("") +
         `
                         </ul>
                        </li>

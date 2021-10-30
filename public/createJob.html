@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Job</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
   <link rel="stylesheet" href="css/createJob.css">
 </head>
 <body>
@@ -45,7 +46,13 @@
     <form>
     <input  type="text" placeholder="title" class="title">
     <input  type="text" placeholder="overview" class="overview">
+        <!-- date picker -->
+  <div class="date-picker">
+    <label for="deadline">Application deadline</label>
+    <input type="date"  id="deadline">
+  </div>
     <input  type="text" placeholder="country" class="country">
+
     <div class="inlineInputs">
       <div>
         <label>Continent</label>
@@ -147,9 +154,19 @@
 </div>
     </div>
 
+
+
     <button type="submit">Create</button>
     </form>
 </div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"></script>
+<script>
+    // Data Picker Initialization
+$('.datepicker').datepicker();
+</script>
 <script src="js/createJob.js"></script>
 
 </body>

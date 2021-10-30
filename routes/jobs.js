@@ -4,6 +4,7 @@ const Jobs = require("../models/Jobs");
 const nodemailer = require("nodemailer");
 const path = require("path");
 const { nanoid } = require("nanoid");
+const moment = require("moment");
 
 router.post(
   "/",
@@ -71,6 +72,17 @@ router.get("/", async (req, res, next) => {
         msg: "Could not get jobs",
       });
     }
+
+    jobs = jobs.filter((job) => {
+      if (job.deadline) {
+        const deadline = moment(job.deadline);
+        const now = moment();
+        if (deadline.diff(now) < 0) {
+          return null;
+        }
+      }
+      return job;
+    });
 
     res.status(200).json({
       count: jobs.length,

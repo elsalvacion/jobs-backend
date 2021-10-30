@@ -4,11 +4,19 @@ const connectDB = require("./config/db");
 const jobsRoute = require("./routes/jobs");
 const errorHandler = require("./middlewares/errors");
 const fileupload = require("express-fileupload");
+const helmet = require("helmet");
+const xss = require("xss-clean");
+const hpp = require("hpp");
 // require and use config files
 require("dotenv").config({ path: "./config/.env" });
 connectDB();
 
 const app = express();
+
+// security
+app.use(helmet());
+app.use(xss());
+app.use(hpp());
 
 // express body parser
 app.use(express.json());
