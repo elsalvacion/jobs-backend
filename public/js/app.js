@@ -1,3 +1,7 @@
+document.getElementById("menu").addEventListener("click", () => {
+  document.getElementById("myDropdown").classList.toggle("showdrop");
+});
+
 const url = "http://localhost:5000";
 const slide = document.querySelector(".slide");
 
@@ -27,6 +31,7 @@ const fetchSlideData = async () => {
 </div>`;
   });
 
+  redirectToJob();
   loadSlick();
 };
 
@@ -80,4 +85,16 @@ const loadSlick = () => {
 };
 
 fetchSlideData();
-loadSlick();
+
+const redirectToJob = () => {
+  const url = "http://localhost:5000";
+  const views = document.querySelectorAll(".view");
+
+  Array.from(views).forEach((view) => {
+    view.addEventListener("click", () => {
+      window.location.href = `${url}/job.html?id=${view.getAttribute(
+        "data-job"
+      )}`;
+    });
+  });
+};

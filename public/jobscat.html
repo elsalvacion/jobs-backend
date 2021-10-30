@@ -20,7 +20,7 @@
             <h1>GETJOB
             </h1>
             <div class="links">
-                <div onclick="myFunction()">
+                <div id="menu">
                     <span class="icons">
                         <span></span>
                         <span></span>
@@ -194,23 +194,7 @@
         </div>
     </div>
 
-    <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("showdrop");
-        }
-        
-        </script>
-        <script>
-const jobItems = document.querySelectorAll(".job-item");
-            // listen for job category click
-jobItems.forEach((jobItem) => {
-  jobItem.addEventListener("click", (e) => {
-    const category = jobItem.getAttribute("data-category");
-    window.location.href = `http://localhost:5000/jobdetails.html?category=${category}`;
-  });
-});
-
-        </script>
+   <script src="js/jobCat.js"></script>
 </body>
 
 </html>

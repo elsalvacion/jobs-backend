@@ -20,7 +20,7 @@
             <h1>GETJOB
             </h1>
             <div class="links">
-                <div onclick="myFunction()">
+                <div id="menu">
                     <span class="icons">
                         <span></span>
                         <span></span>
@@ -198,9 +198,9 @@
     </section>
 
     <script>
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("showdrop");
-      }
+      document.getElementById("menu").addEventListener("click", () => {
+  document.getElementById("myDropdown").classList.toggle("showdrop");
+});
     </script>
   </body>
 </html>
