@@ -45,7 +45,7 @@ form.addEventListener("submit", async (e) => {
   inputs.forEach((input) => {
     if (input.value === "") {
       window.scrollTo({ top: 30 });
-      errors.innerHTML = "<p class="errors">All fields are required</p>";
+      errors.innerHTML = `<p class="errors">All fields are required</p>`;
       error = true;
     }
   });
@@ -99,7 +99,7 @@ form.addEventListener("submit", async (e) => {
         errors.innerHTML += `<p class="errors">${msg}</p>`;
       });
     } else {
-      errors.innerHTML = "<p class="success"> Job added successfuly</p>";
+      errors.innerHTML = `<p class="success"> Job added successfuly</p>`;
     }
   }
 });

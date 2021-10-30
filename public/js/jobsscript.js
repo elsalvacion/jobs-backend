@@ -15,84 +15,78 @@ const populateJobs = async () => {
     `;
   } else {
     data.msg.forEach((job) => {
-      boxContainer.innerHTML += `
-      <div class="boxitem">
-
-      <div.
-       class="boxheader">
-          <h2 class="boxtitle">${job.title}</h2>
-          <i class="fa fa-plus boxicon"></i>
-      </div>
-      <div class="boxcontent">
-          <hr>
-          <div class="content-item">
-              <button class="btn-aply" data-id="${job._id}">Apply Now</button>
-          </div>
-          <hr>
-
-          <div class="content-item">
-              <div class="sub-content-des1 des1-job">
-                  <ul>
-                  <li><span>Organization Name:</span>${job.companyName}</li>
-                      <li><span>Overview:</span>${job.overview}</li>
-                      <li><span>Vacancies:</span>${job.numberofVacancies}</li>
-                      <li><span>Salary:</span>${job.minSalary} - ${
-        job.maxSalary
-      }</li>
-                      <li><span>Location:</span>${job.country} , ${
-        job.location
-      }.</li>
-                      <li><span>Type:</span>${job.type}</li>
-                      <li><span>Qualification:</span>
-                       <ul>
-                       ${job.qualifications
-                         .map((qualification) => {
-                           return `<li>${qualification}</li>`;
-                         })
-                         .join("")}
-                       </ul>
-                      </li>
-                      ${
-                        job.optionalQualifications.length > 0
-                          ? `<li>
-                            <span>Optional Qualifications:</span>
-                            <ul>
-                              ${job.optionalQualifications
-                                .map((qualification) => {
-                                  return `<li>${qualification}</li>`;
-                                })
-                                .join("")}
-                            </ul>
-                          </li>`
-                          : null
-                      }
-                      <li><span>Reponsibilities:</span>
-                       <ul>
-                       ${job.reponsibilities
-                         .map((reponsibility) => {
-                           return `<li>${reponsibility}</li>`;
-                         })
-                         .join("")}
-                       </ul>
-                      </li>
-
-                      <li><span>Benefits:</span>
-                      <ul>
-                      ${job.benefits
-                        .map((benefit) => {
-                          return `<li>${benefit}</li>`;
-                        })
-                        .join("")}
-                      </ul>
-                     </li>
-                  </ul>
-              </div>
-          </div>
-
-      </div>
-
-  </div>
-      `;
+      boxContainer.innerHTML +=
+        `
+        <div class="boxitem">
+        <div
+         class="boxheader">
+            <h2 class="boxtitle">${job.title}</h2>
+            <i class="fa fa-plus boxicon"></i>
+        </div>
+        <div class="boxcontent">
+            <hr>
+            <div class="content-item">
+                <button class="btn-aply" data-id="${job._id}">Apply Now</button>
+            </div>
+            <hr>
+            <div class="content-item">
+                <div class="sub-content-des1 des1-job">
+                    <ul>
+                    <li><span>Organization Name:</span>${job.companyName}</li>
+                        <li><span>Overview:</span>${job.overview}</li>
+                        <li><span>Vacancies:</span>${job.numberofVacancies}</li>
+                        <li><span>Salary:</span>${job.minSalary} - ${job.maxSalary}</li>
+                        <li><span>Location:</span>${job.country} , ${job.location}.</li>
+                        <li><span>Type:</span>${job.type}</li>
+                        <li><span>Qualification:</span>
+                         <ul> ` +
+        job.qualifications
+          .map((qualification) => {
+            return `<li>${qualification}</li>`;
+          })
+          .join("") +
+        ` 
+                         </ul>
+                        </li>
+ 
+                        <li><span>Optional Qualifications:</span>
+                        <ul>
+                        ` +
+        job.optionalQualifications
+          .map((qualification) => {
+            return `<li>${qualification}</li>`;
+          })
+          .join("") +
+        ` 
+                        </ul>
+                       </li>
+                       
+                        <li><span>Reponsibilities:</span>
+                         <ul> ` +
+        job.reponsibilities
+          .map((reponsibility) => {
+            return `<li>${reponsibility}</li>`;
+          })
+          .join("") +
+        ` 
+                         </ul>
+                        </li>
+                        <li><span>Benefits:</span>
+                        <ul> `;
+      job.benefits
+        .map((benefit) => {
+          return `<li>${benefit}</li>`;
+        })
+        .join("") +
+        `
+                        </ul>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        `;
     });
   }
   useAccordion();
