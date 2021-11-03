@@ -32,7 +32,7 @@ btn.addEventListener("click", async (e) => {
       const formData = new FormData();
       formData.append("file", fileField.files[0]);
 
-      if (formData.get("file").size > 500000) {
+      if (formData.get("file").size > 500000000000) {
         result.innerHTML = `<p class="error">File Size greater than 5MB</p>`;
       } else {
         const res = await fetch(`${url}/jobs/apply/${params.id}`, {

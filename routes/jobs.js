@@ -44,27 +44,28 @@ router.post(
 
 // get all jobs
 router.get("/", async (req, res, next) => {
-  let queryStr;
-
-  const filters = { ...req.query };
+  let queryStr = {};
 
   // select type values
   if (req.query.type) {
-    queryStr = Jobs.find({ type: req.query.type }).sort({ createdAt: -1 });
+    queryStr.type = req.query.type;
   }
 
   // select category values
   if (req.query.category) {
-    queryStr = Jobs.find({ category: req.query.category }).sort({
-      createdAt: -1,
-    });
+    queryStr.category = req.query.category;
   }
+
+  // select location values
+  if (req.query.location) {
+    queryStr.location = req.query.location;
+  }
+  console.log(queryStr);
 
   try {
     let jobs;
-    if (!req.query.type && !req.query.category) {
-      jobs = await Jobs.find().sort({ createdAt: -1 });
-    } else jobs = await queryStr;
+    // console.log(queryStr);
+    jobs = await Jobs.find(queryStr).sort({ createdAt: -1 });
 
     if (!jobs) {
       return res.status(400).json({
@@ -163,7 +164,6 @@ router.delete("/:id", async (req, res, next) => {
 
 router.post("/apply/:id", async (req, res, next) => {
   try {
-    console.log(req.files);
     const file = req.files.file;
 
     if (file.mimetype !== "application/pdf") {
@@ -181,7 +181,7 @@ router.post("/apply/:id", async (req, res, next) => {
     if (!job) {
       return res
         .status(400)
-        .json({ success: false, msg: "No Job of this category" });
+        .json({ success: false, msg: "No such job in this category" });
     }
     const id = nanoid(6);
     const name = `${id}${path.parse(file.name).ext}`;
@@ -200,7 +200,7 @@ router.post("/apply/:id", async (req, res, next) => {
 
     const mailOptions = {
       from: `Jobs <${process.env.EMAIL}>`,
-      to: "alieukeita201@gmail.com",
+      to: job.email,
       subject: "New Job applicant",
       text: `You have a new applicant for the job you posted at jobs.com with the title: ${job.title} and overview of: 
 ${job.overview}
