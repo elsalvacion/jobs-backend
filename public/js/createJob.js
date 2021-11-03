@@ -83,7 +83,7 @@ form.addEventListener("submit", async (e) => {
     };
 
     // console.log(data);
-    const res = await fetch(`http://localhost:5000/jobs`, {
+    const res = await fetch(`https://jobs-backend-app.herokuapp.com/jobs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

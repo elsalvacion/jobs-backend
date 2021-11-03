@@ -6,6 +6,6 @@ const jobItems = document.querySelectorAll(".job-item");
 jobItems.forEach((jobItem) => {
   jobItem.addEventListener("click", (e) => {
     const category = jobItem.getAttribute("data-category");
-    window.location.href = `http://localhost:5000/jobdetails.html?category=${category}`;
+    window.location.href = `https://jobs-backend-app.herokuapp.com/jobdetails.html?category=${category}`;
   });
 });

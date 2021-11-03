@@ -2,7 +2,7 @@ document.getElementById("menu").addEventListener("click", () => {
   document.getElementById("myDropdown").classList.toggle("showdrop");
 });
 
-const url = "http://localhost:5000";
+const url = "https://jobs-backend-app.herokuapp.com";
 const slide = document.querySelector(".slide");
 
 // fetch data for the slide

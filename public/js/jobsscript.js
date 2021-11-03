@@ -2,7 +2,7 @@ document.getElementById("menu").addEventListener("click", () => {
   document.getElementById("myDropdown").classList.toggle("showdrop");
 });
 
-const url = "http://localhost:5000";
+const url = "https://jobs-backend-app.herokuapp.com";
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 if (!params.category) window.location.href = `${url}`;
