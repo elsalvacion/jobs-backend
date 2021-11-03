@@ -97,9 +97,11 @@ form.addEventListener("submit", async (e) => {
     if (res.status !== 200) {
       errors.innerHTML = "";
       json.errors.forEach((msg) => {
+        window.scrollTo({ top: 30 });
         errors.innerHTML += `<p class="errors">${msg}</p>`;
       });
     } else {
+      window.scrollTo({ top: 30 });
       errors.innerHTML = `<p class="success"> Job added successfuly</p>`;
     }
   }
