@@ -332,3 +332,40 @@ ul.social-icons li a:hover {
 .social-icons button:hover span {
   margin-left: 10px;
 }
+
+/* Medium */
+@media (max-width: 800px) {
+  .fristSection .caption h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .fristSection .caption h2 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .fristSection .caption h2 {
+    font-size: 20px;
+  }
+}
+
+/* pppppppp */
+
+@media (max-width: 800px) {
+  .caption .sectionRead p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .caption .sectionRead p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .caption .sectionRead p {
+    font-size: 5px;
+  }
+}

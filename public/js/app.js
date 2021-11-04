@@ -2,13 +2,13 @@ document.getElementById("menu").addEventListener("click", () => {
   document.getElementById("myDropdown").classList.toggle("showdrop");
 });
 
-const url = "https://jobs-backend-app.herokuapp.com";
+const url = "http://localhost:5000";
 const slide = document.querySelector(".slide");
 
 // fetch data for the slide
 
 const fetchSlideData = async () => {
-  const res = await fetch(`${url}/jobs`);
+  const res = await fetch(`${url}/jobs?limit=6`);
   const data = await res.json();
   // console.log(data.msg);
   data.msg.forEach((job) => {

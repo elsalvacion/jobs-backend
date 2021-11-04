@@ -60,12 +60,16 @@ router.get("/", async (req, res, next) => {
   if (req.query.location) {
     queryStr.location = req.query.location;
   }
-  console.log(queryStr);
+  const limit = parseInt(req.query.limit, 10) || null;
 
   try {
     let jobs;
     // console.log(queryStr);
-    jobs = await Jobs.find(queryStr).sort({ createdAt: -1 });
+    if (limit) {
+      jobs = await Jobs.find(queryStr).sort({ createdAt: -1 }).limit(limit);
+    } else {
+      jobs = await Jobs.find(queryStr).sort({ createdAt: -1 });
+    }
 
     if (!jobs) {
       return res.status(400).json({
@@ -221,6 +225,48 @@ ${job.overview}
         res
           .status(200)
           .json({ success: true, msg: "Application sent successfully" });
+      }
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// contact
+router.post("/contact", async (req, res, next) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: `Jobs <${process.env.EMAIL}>`,
+      to: "alieukeita201@gmail.com",
+      subject: req.body.subject,
+      text: `
+      You have a new message from jobs.com.
+
+      Message: 
+      ${req.body.message}
+      
+      Return Email: ${req.body.email}
+      Return Name: ${req.body.name}
+      `,
+    };
+
+    await transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+        throw err;
+      } else {
+        console.log("Email sent: " + info.response);
+        res
+          .status(200)
+          .json({ success: true, msg: "Message Sent Successfully" });
       }
     });
   } catch (err) {
