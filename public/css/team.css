@@ -152,8 +152,9 @@ header .links .showdrop {
 
 .container .card-wrapper {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  width: auto;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card-wrapper .card {
@@ -167,6 +168,7 @@ header .links .showdrop {
   border: 1px solid rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
+  margin-bottom: 100px;
 }
 
 .card-wrapper .card:hover {

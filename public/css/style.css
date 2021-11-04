@@ -226,12 +226,12 @@ a {
   background-image: url(../images/about-fullscreen-1-1920x700.jpg);
   background-attachment: fixed;
 }
-.fristSection .caption .sectionRead h2 {
+/* .fristSection .caption .sectionRead h2 {
   margin-top: 0px;
   margin-bottom: 25px;
   font-size: 50px;
   max-width: 100%;
-}
+} */
 .fristSection .caption .sectionRead p {
   color: #fff;
   max-width: 100%;
